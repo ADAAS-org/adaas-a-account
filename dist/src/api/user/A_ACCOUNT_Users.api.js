@@ -72,6 +72,13 @@ class A_ACCOUNT_UsersAPIClass extends a_auth_1.A_AUTH_APIProvider {
     // ==========================================
     // ============== User Settings =============
     // ==========================================
+    getUserSettings(userIdOrIdentity) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.axiosInstance
+                .get(`/api/v1/users/${userIdOrIdentity}/settings`);
+            return response.data;
+        });
+    }
     /**
      * This function is used to get user settings
      *

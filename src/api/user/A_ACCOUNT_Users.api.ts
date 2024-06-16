@@ -1,7 +1,8 @@
-import { A_SDK_TYPES__IDefaultPagination, A_SDK_TYPES__IRequestFilter, A_SDK_TYPES__IRequestPagination } from "@adaas/a-sdk-types";
+import { A_SDK_TYPES__DeepPartial, A_SDK_TYPES__IDefaultPagination, A_SDK_TYPES__IRequestFilter, A_SDK_TYPES__IRequestPagination } from "@adaas/a-sdk-types";
 import { AxiosResponse } from "axios";
 import { A_ACCOUNT_TYPES__UserProfile_APIEntity, A_ACCOUNT_TYPES__UserSettings_APIEntity, A_ACCOUNT_TYPES__User_APIEntity } from "./types/A_ACCOUNT_UsersAPI.types";
 import { A_AUTH_APIProvider } from "@adaas/a-auth";
+import { A_SDK_TYPES__Required } from "@adaas/a-sdk-types/dist/src/types/common.types";
 
 export class A_ACCOUNT_UsersAPIClass extends A_AUTH_APIProvider {
 
@@ -46,7 +47,10 @@ export class A_ACCOUNT_UsersAPIClass extends A_AUTH_APIProvider {
 
 
     async createUser(
-        user: A_ACCOUNT_TYPES__User_APIEntity
+        user: A_SDK_TYPES__Required<
+            A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__User_APIEntity>,
+            ['id', 'settings.timezone', 'settings.country', 'profile.name', 'profile.work_email']
+        >
     ): Promise<A_ACCOUNT_TYPES__User_APIEntity> {
         const response: AxiosResponse<A_ACCOUNT_TYPES__User_APIEntity> = await this.axiosInstance
             .post('/api/v1/users', user);
@@ -88,7 +92,7 @@ export class A_ACCOUNT_UsersAPIClass extends A_AUTH_APIProvider {
 
     async updateUserProfile(
         userIdOrIdentity: number | string,
-        profile: A_ACCOUNT_TYPES__UserProfile_APIEntity
+        profile: A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__UserProfile_APIEntity>
     ): Promise<A_ACCOUNT_TYPES__UserProfile_APIEntity> {
 
         const response: AxiosResponse<
@@ -107,6 +111,16 @@ export class A_ACCOUNT_UsersAPIClass extends A_AUTH_APIProvider {
     // ============== User Settings =============
     // ==========================================
 
+    async getUserSettings(
+        userIdOrIdentity: number | string,
+    ): Promise<A_ACCOUNT_TYPES__UserSettings_APIEntity> {
+
+        const response: AxiosResponse<A_ACCOUNT_TYPES__UserSettings_APIEntity> = await this.axiosInstance
+            .get(`/api/v1/users/${userIdOrIdentity}/settings`);
+
+        return response.data;
+    }
+
     /**
      * This function is used to get user settings
      * 
@@ -116,7 +130,7 @@ export class A_ACCOUNT_UsersAPIClass extends A_AUTH_APIProvider {
      */
     async updateUserSettings(
         userIdOrIdentity: number | string,
-        settings: A_ACCOUNT_TYPES__UserSettings_APIEntity
+        settings: A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__UserSettings_APIEntity>
     ): Promise<any> {
 
         const response: AxiosResponse<any> = await this.axiosInstance.put(

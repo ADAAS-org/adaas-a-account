@@ -1,4 +1,5 @@
 import { A_ACCOUNT_TYPES__BusinessDomain_APIEntity, A_ACCOUNT_TYPES__BusinessType_APIEntity, A_ACCOUNT_TYPES__Country_APIEntity, A_ACCOUNT_TYPES__Timezone_APIEntity } from "../../common/types/A_ACCOUNT_CommonAPI.types";
+import { A_ACCOUNT_TYPES__User_APIEntity } from "../../user/types/A_ACCOUNT_UsersAPI.types";
 
 export type A_ACCOUNT_TYPES__Organization_APIEntity = {
     id: number,
@@ -14,6 +15,11 @@ export type A_ACCOUNT_TYPES__Organization_APIEntity = {
     }>
 
     balance?: A_ACCOUNT_TYPES__OrganizationBalance_APIEntity
+
+    /**
+    * User who created this organization
+    */
+    user?: A_ACCOUNT_TYPES__User_APIEntity
 
     adaas_sso_role_identity: string;
 

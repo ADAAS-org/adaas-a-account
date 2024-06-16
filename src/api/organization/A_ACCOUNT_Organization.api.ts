@@ -2,6 +2,8 @@ import { A_SDK_TYPES__IDefaultPagination, A_SDK_TYPES__IRequestFilter, A_SDK_TYP
 import { AxiosResponse } from "axios";
 import { A_ACCOUNT_TYPES__OrganizationProfile_APIEntity, A_ACCOUNT_TYPES__OrganizationSettings_APIEntity, A_ACCOUNT_TYPES__Organization_APIEntity } from "./types/A_ACCOUNT_OrganizationsAPI.types";
 import { A_AUTH_APIProvider } from "@adaas/a-auth";
+import { A_ACCOUNT_TYPES__OrganizationUnit_APIEntity } from "./types/A_ACCOUNT_OrganizationUnitsAPI.types";
+import { A_SDK_TYPES__DeepPartial, A_SDK_TYPES__Required } from "@adaas/a-sdk-types/dist/src/types/common.types";
 
 export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
 
@@ -16,6 +18,13 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
     // ================ Organization API ================
     // ==========================================
 
+    /**
+     * Returns list of organizations based on api credentials and user permissions
+     * 
+     * @param pagination 
+     * @param filter 
+     * @returns 
+     */
     async getOrganizations(
         pagination: A_SDK_TYPES__IRequestPagination,
         filter: A_SDK_TYPES__IRequestFilter
@@ -33,7 +42,12 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
         return response.data;
     }
 
-
+    /**
+     *  This function is used to get organization with nested entities such as profile, settings, etc.
+     * 
+     * @param organizationIdOrIdentity 
+     * @returns 
+     */
     async getOrganization(
         organizationIdOrIdentity: number | string,
     ): Promise<A_ACCOUNT_TYPES__Organization_APIEntity> {
@@ -44,9 +58,21 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
     }
 
 
+    /**
+     * This function is used to create organization
+     * 
+     * @param organization 
+     * @returns 
+     */
     async createOrganization(
-        organization: A_ACCOUNT_TYPES__Organization_APIEntity
-    ): Promise<A_ACCOUNT_TYPES__Organization_APIEntity> {
+        organization: A_SDK_TYPES__Required<
+            A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__Organization_APIEntity>,
+            ['adaas_sso_role_identity', 'settings.timezone', 'settings.country', 'profile.name', 'profile.website', 'user']
+        >
+    ): Promise<
+        A_ACCOUNT_TYPES__Organization_APIEntity
+    > {
+
         const response: AxiosResponse<A_ACCOUNT_TYPES__Organization_APIEntity> = await this.axiosInstance
             .post('/api/v1/organizations', organization);
 
@@ -58,16 +84,31 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
     // ============== Organization Profile ==============
     // ==========================================
 
+    /**
+     * 
+     * This function is used to get organization profile
+     * 
+     * @param organizationIdOrIdentity 
+     * @returns 
+     */
     async getOrganizationProfile(
         organizationIdOrIdentity: number | string,
-    ): Promise<A_ACCOUNT_TYPES__OrganizationProfile_APIEntity> {
-
+    ): Promise<
+        A_ACCOUNT_TYPES__OrganizationProfile_APIEntity
+    > {
         const response: AxiosResponse<A_ACCOUNT_TYPES__OrganizationProfile_APIEntity> = await this.axiosInstance
             .get(`/api/v1/organizations/${organizationIdOrIdentity}/profile`);
 
         return response.data;
     }
 
+    /**
+     * This function is used to upload organization logo
+     * 
+     * @param organizationIdOrIdentity 
+     * @param file 
+     * @returns 
+     */
     async uploadLogo(
         organizationIdOrIdentity: number | string,
         file: File
@@ -87,7 +128,7 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
 
     async updateOrganizationProfile(
         organizationIdOrIdentity: number | string,
-        profile: A_ACCOUNT_TYPES__OrganizationProfile_APIEntity
+        profile: A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__OrganizationProfile_APIEntity>
     ): Promise<A_ACCOUNT_TYPES__OrganizationProfile_APIEntity> {
 
         const response: AxiosResponse<
@@ -107,6 +148,22 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
     // ==========================================
 
     /**
+     * 
+     *  This function is used to get organization settings
+     * 
+     * @param organizationIdOrIdentity 
+     * @returns 
+     */
+    async getOrganizationSettings(
+        organizationIdOrIdentity: number | string
+    ): Promise<A_ACCOUNT_TYPES__OrganizationSettings_APIEntity> {
+        const response: AxiosResponse<A_ACCOUNT_TYPES__OrganizationSettings_APIEntity> = await this.axiosInstance.get(
+            `/api/v1/organizations/${organizationIdOrIdentity}/settings`
+        );
+        return response.data;
+    }
+
+    /**
      * This function is used to get organization settings
      * 
      * @param organizationIdOrIdentity  numeric organization id or string identity
@@ -115,7 +172,7 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
      */
     async updateOrganizationSettings(
         organizationIdOrIdentity: number | string,
-        settings: A_ACCOUNT_TYPES__OrganizationSettings_APIEntity
+        settings: A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__OrganizationSettings_APIEntity>
     ): Promise<any> {
 
         const response: AxiosResponse<any> = await this.axiosInstance.put(
@@ -166,4 +223,55 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
     }
 
 
+
+    // ==========================================
+    // ======== Organization Units ==============
+    // ==========================================
+    async getOrganizationUnits(
+        organizationIdOrIdentity: number | string,
+        pagination: A_SDK_TYPES__IRequestPagination,
+        filter: A_SDK_TYPES__IRequestFilter
+    ): Promise<A_SDK_TYPES__IDefaultPagination<A_ACCOUNT_TYPES__OrganizationUnit_APIEntity>> {
+        const response: AxiosResponse<
+            A_SDK_TYPES__IDefaultPagination<A_ACCOUNT_TYPES__OrganizationUnit_APIEntity>
+        > = await this.axiosInstance
+            .get(`/api/v1/organizations/${organizationIdOrIdentity}/units`, {
+                params: {
+                    ...pagination,
+                    ...filter
+                }
+            });
+
+        return response.data;
+    }
+
+    async getOrganizationUnit(
+        organizationIdOrIdentity: number | string,
+        unitIdOrIdentity: number | string
+    ): Promise<A_ACCOUNT_TYPES__OrganizationUnit_APIEntity> {
+        const response: AxiosResponse<A_ACCOUNT_TYPES__OrganizationUnit_APIEntity> = await this.axiosInstance
+            .get(`/api/v1/organizations/${organizationIdOrIdentity}/units/${unitIdOrIdentity}`);
+
+        return response.data;
+    }
+
+
+    /**
+     * 
+     * Allows to create organization unit from template or from scratch
+     * 
+     * @param organizationIdOrIdentity 
+     * @param unit 
+     * @returns 
+     */
+    async createOrganizationUnit(
+        organizationIdOrIdentity: number | string,
+        unit: A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__OrganizationUnit_APIEntity>
+    ): Promise<A_ACCOUNT_TYPES__OrganizationUnit_APIEntity> {
+        const response: AxiosResponse<A_ACCOUNT_TYPES__OrganizationUnit_APIEntity> = await this.axiosInstance
+            .post(`/api/v1/organizations/${organizationIdOrIdentity}/units`, unit);
+
+        return response.data;
+    }
 }
+

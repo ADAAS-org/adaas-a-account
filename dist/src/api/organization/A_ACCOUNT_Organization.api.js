@@ -20,6 +20,13 @@ class A_ACCOUNT_OrganizationsAPIClass extends a_auth_1.A_AUTH_APIProvider {
     // ==========================================
     // ================ Organization API ================
     // ==========================================
+    /**
+     * Returns list of organizations based on api credentials and user permissions
+     *
+     * @param pagination
+     * @param filter
+     * @returns
+     */
     getOrganizations(pagination, filter) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield this.axiosInstance
@@ -29,6 +36,12 @@ class A_ACCOUNT_OrganizationsAPIClass extends a_auth_1.A_AUTH_APIProvider {
             return response.data;
         });
     }
+    /**
+     *  This function is used to get organization with nested entities such as profile, settings, etc.
+     *
+     * @param organizationIdOrIdentity
+     * @returns
+     */
     getOrganization(organizationIdOrIdentity) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield this.axiosInstance
@@ -36,6 +49,12 @@ class A_ACCOUNT_OrganizationsAPIClass extends a_auth_1.A_AUTH_APIProvider {
             return response.data;
         });
     }
+    /**
+     * This function is used to create organization
+     *
+     * @param organization
+     * @returns
+     */
     createOrganization(organization) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield this.axiosInstance
@@ -46,6 +65,13 @@ class A_ACCOUNT_OrganizationsAPIClass extends a_auth_1.A_AUTH_APIProvider {
     // ==========================================
     // ============== Organization Profile ==============
     // ==========================================
+    /**
+     *
+     * This function is used to get organization profile
+     *
+     * @param organizationIdOrIdentity
+     * @returns
+     */
     getOrganizationProfile(organizationIdOrIdentity) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield this.axiosInstance
@@ -53,6 +79,13 @@ class A_ACCOUNT_OrganizationsAPIClass extends a_auth_1.A_AUTH_APIProvider {
             return response.data;
         });
     }
+    /**
+     * This function is used to upload organization logo
+     *
+     * @param organizationIdOrIdentity
+     * @param file
+     * @returns
+     */
     uploadLogo(organizationIdOrIdentity, file) {
         return __awaiter(this, void 0, void 0, function* () {
             const formData = new FormData();
@@ -72,6 +105,19 @@ class A_ACCOUNT_OrganizationsAPIClass extends a_auth_1.A_AUTH_APIProvider {
     // ==========================================
     // ============== Organization Settings =============
     // ==========================================
+    /**
+     *
+     *  This function is used to get organization settings
+     *
+     * @param organizationIdOrIdentity
+     * @returns
+     */
+    getOrganizationSettings(organizationIdOrIdentity) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.axiosInstance.get(`/api/v1/organizations/${organizationIdOrIdentity}/settings`);
+            return response.data;
+        });
+    }
     /**
      * This function is used to get organization settings
      *
@@ -103,6 +149,40 @@ class A_ACCOUNT_OrganizationsAPIClass extends a_auth_1.A_AUTH_APIProvider {
     depositOrganizationBalance(organizationIdOrIdentity, amount, payload) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield this.axiosInstance.post(`/api/v1/organizations/${organizationIdOrIdentity}/balance/deposit`, { amount, payload });
+            return response.data;
+        });
+    }
+    // ==========================================
+    // ======== Organization Units ==============
+    // ==========================================
+    getOrganizationUnits(organizationIdOrIdentity, pagination, filter) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.axiosInstance
+                .get(`/api/v1/organizations/${organizationIdOrIdentity}/units`, {
+                params: Object.assign(Object.assign({}, pagination), filter)
+            });
+            return response.data;
+        });
+    }
+    getOrganizationUnit(organizationIdOrIdentity, unitIdOrIdentity) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.axiosInstance
+                .get(`/api/v1/organizations/${organizationIdOrIdentity}/units/${unitIdOrIdentity}`);
+            return response.data;
+        });
+    }
+    /**
+     *
+     * Allows to create organization unit from template or from scratch
+     *
+     * @param organizationIdOrIdentity
+     * @param unit
+     * @returns
+     */
+    createOrganizationUnit(organizationIdOrIdentity, unit) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const response = yield this.axiosInstance
+                .post(`/api/v1/organizations/${organizationIdOrIdentity}/units`, unit);
             return response.data;
         });
     }
