@@ -29,10 +29,10 @@ class A_ACCOUNT_UsersAPIClass extends a_auth_1.A_AUTH_APIProvider {
             return response.data;
         });
     }
-    getUser(userIdOrIdentity) {
+    getUser(userIdentity) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield this.axiosInstance
-                .get(`/api/v1/users/${userIdOrIdentity}`);
+                .get(`/api/v1/users/${userIdentity}`);
             return response.data;
         });
     }
@@ -46,49 +46,49 @@ class A_ACCOUNT_UsersAPIClass extends a_auth_1.A_AUTH_APIProvider {
     // ==========================================
     // ============== User Profile ==============
     // ==========================================
-    getUserProfile(userIdOrIdentity) {
+    getUserProfile(userIdentity) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield this.axiosInstance
-                .get(`/api/v1/users/${userIdOrIdentity}/profile`);
+                .get(`/api/v1/users/${userIdentity}/profile`);
             return response.data;
         });
     }
-    uploadAvatar(userIdOrIdentity, file) {
+    uploadAvatar(userIdentity, file) {
         return __awaiter(this, void 0, void 0, function* () {
             const formData = new FormData();
             formData.append('file', file);
             const response = yield this.axiosInstance
-                .post(`/api/v1/users/${userIdOrIdentity}/profile/avatar`, formData);
+                .post(`/api/v1/users/${userIdentity}/profile/avatar`, formData);
             return response.data;
         });
     }
-    updateUserProfile(userIdOrIdentity, profile) {
+    updateUserProfile(userIdentity, profile) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield this.axiosInstance
-                .put(`/api/v1/users/${userIdOrIdentity}/profile`, profile);
+                .put(`/api/v1/users/${userIdentity}/profile`, profile);
             return response.data;
         });
     }
     // ==========================================
     // ============== User Settings =============
     // ==========================================
-    getUserSettings(userIdOrIdentity) {
+    getUserSettings(userIdentity) {
         return __awaiter(this, void 0, void 0, function* () {
             const response = yield this.axiosInstance
-                .get(`/api/v1/users/${userIdOrIdentity}/settings`);
+                .get(`/api/v1/users/${userIdentity}/settings`);
             return response.data;
         });
     }
     /**
      * This function is used to get user settings
      *
-     * @param userIdOrIdentity  numeric user id or string identity
+     * @param userIdentity  numeric user id or string identity
      * @param settings  object with settings
      * @returns
      */
-    updateUserSettings(userIdOrIdentity, settings) {
+    updateUserSettings(userIdentity, settings) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield this.axiosInstance.put(`/api/v1/users/${userIdOrIdentity}/settings`, settings);
+            const response = yield this.axiosInstance.put(`/api/v1/users/${userIdentity}/settings`, settings);
             return response.data;
         });
     }

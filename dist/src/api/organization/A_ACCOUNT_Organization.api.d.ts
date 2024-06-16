@@ -32,7 +32,8 @@ export declare class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider 
         'settings.country',
         'profile.name',
         'profile.website',
-        'user'
+        'user',
+        'user.id'
     ]>): Promise<A_ACCOUNT_TYPES__Organization_APIEntity>;
     /**
      *

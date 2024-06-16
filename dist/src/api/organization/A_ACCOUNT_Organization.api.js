@@ -18,7 +18,7 @@ class A_ACCOUNT_OrganizationsAPIClass extends a_auth_1.A_AUTH_APIProvider {
         this.init();
     }
     // ==========================================
-    // ================ Organization API ================
+    // =========== Organization API =============
     // ==========================================
     /**
      * Returns list of organizations based on api credentials and user permissions
@@ -63,7 +63,7 @@ class A_ACCOUNT_OrganizationsAPIClass extends a_auth_1.A_AUTH_APIProvider {
         });
     }
     // ==========================================
-    // ============== Organization Profile ==============
+    // ========= Organization Profile ===========
     // ==========================================
     /**
      *
@@ -103,7 +103,7 @@ class A_ACCOUNT_OrganizationsAPIClass extends a_auth_1.A_AUTH_APIProvider {
         });
     }
     // ==========================================
-    // ============== Organization Settings =============
+    // ========= Organization Settings ==========
     // ==========================================
     /**
      *

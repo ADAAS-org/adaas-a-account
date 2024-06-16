@@ -15,7 +15,7 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
 
 
     // ==========================================
-    // ================ Organization API ================
+    // =========== Organization API =============
     // ==========================================
 
     /**
@@ -67,7 +67,7 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
     async createOrganization(
         organization: A_SDK_TYPES__Required<
             A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__Organization_APIEntity>,
-            ['adaas_sso_role_identity', 'settings.timezone', 'settings.country', 'profile.name', 'profile.website', 'user']
+            ['adaas_sso_role_identity', 'settings.timezone', 'settings.country', 'profile.name', 'profile.website', 'user', 'user.id']
         >
     ): Promise<
         A_ACCOUNT_TYPES__Organization_APIEntity
@@ -81,7 +81,7 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
 
 
     // ==========================================
-    // ============== Organization Profile ==============
+    // ========= Organization Profile ===========
     // ==========================================
 
     /**
@@ -144,7 +144,7 @@ export class A_ACCOUNT_OrganizationsAPIClass extends A_AUTH_APIProvider {
 
 
     // ==========================================
-    // ============== Organization Settings =============
+    // ========= Organization Settings ==========
     // ==========================================
 
     /**
