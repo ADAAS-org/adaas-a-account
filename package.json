@@ -44,9 +44,9 @@
   "author": "adaas.org",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ADAAS-org/adaas-adf-auth/issues"
+    "url": "https://github.com/ADAAS-org/adaas-a-account/issues"
   },
-  "homepage": "https://github.com/ADAAS-org/adaas-adf-auth#readme",
+  "homepage": "https://github.com/ADAAS-org/adaas-a-accounth#readme",
   "dependencies": {
     "@adaas/a-auth": "^0.0.21",
     "@adaas/a-sdk-types": "^0.0.35",
