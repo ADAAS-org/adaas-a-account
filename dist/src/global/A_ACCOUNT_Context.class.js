@@ -13,6 +13,9 @@ exports.A_ACCOUNT_Context = exports.A_ACCOUNT_ContextClass = void 0;
 const A_AUTH_Context_class_1 = require("@adaas/a-auth/dist/src/global/A_AUTH_Context.class");
 const a_sdk_types_1 = require("@adaas/a-sdk-types");
 const errors_constants_1 = require("../constants/errors.constants");
+/**
+ * Global AUTH Context for the A-Account SDKs
+ */
 class A_ACCOUNT_ContextClass extends A_AUTH_Context_class_1.A_AUTH_ContextClass {
     constructor() {
         super({

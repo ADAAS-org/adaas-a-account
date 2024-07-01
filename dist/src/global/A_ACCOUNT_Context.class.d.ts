@@ -1,5 +1,8 @@
 import { A_AUTH_ContextClass } from "@adaas/a-auth/dist/src/global/A_AUTH_Context.class";
 import { A_AUTH_TYPES__IAuthenticator } from "@adaas/a-auth";
+/**
+ * Global AUTH Context for the A-Account SDKs
+ */
 export declare class A_ACCOUNT_ContextClass extends A_AUTH_ContextClass {
     /**
      * Global AUTH Context for the SDKs
