@@ -1,5 +1,8 @@
 
-export { A_ACCOUNT_Context } from './src/global/A_ACCOUNT_Context.class';
+export {
+    A_ACCOUNT_Context,
+    A_ACCOUNT_ContextClass
+} from './src/global/A_ACCOUNT_Context.class';
 
 // ============ Export Global & Service Entities ============
 

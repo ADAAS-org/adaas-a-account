@@ -26,9 +26,10 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.A_ACCOUNT_CONSTANTS__ERROR_CODES = exports.A_ACCOUNT_CONSTANTS__DEFAULT_ERRORS = exports.A_AUTH_ServerCommands = exports.A_AUTH_AppInteractions = exports.A_ACCOUNT_Context = void 0;
+exports.A_ACCOUNT_CONSTANTS__ERROR_CODES = exports.A_ACCOUNT_CONSTANTS__DEFAULT_ERRORS = exports.A_AUTH_ServerCommands = exports.A_AUTH_AppInteractions = exports.A_ACCOUNT_ContextClass = exports.A_ACCOUNT_Context = void 0;
 var A_ACCOUNT_Context_class_1 = require("./src/global/A_ACCOUNT_Context.class");
 Object.defineProperty(exports, "A_ACCOUNT_Context", { enumerable: true, get: function () { return A_ACCOUNT_Context_class_1.A_ACCOUNT_Context; } });
+Object.defineProperty(exports, "A_ACCOUNT_ContextClass", { enumerable: true, get: function () { return A_ACCOUNT_Context_class_1.A_ACCOUNT_ContextClass; } });
 // ============ Export Global & Service Entities ============
 // ================== API ==================
 exports.A_AUTH_AppInteractions = __importStar(require("./src/api/app-interactions"));

@@ -1,7 +1,6 @@
-import { A_AUTH_Context, A_AUTH_ContextClass } from "@adaas/a-auth/dist/src/global/A_AUTH_Context.class";
 import { A_SDK_CONSTANTS__ERROR_CODES } from "@adaas/a-sdk-types";
 import { A_ACCOUNT_CONSTANTS__DEFAULT_ERRORS } from "../constants/errors.constants";
-import { A_AUTH_TYPES__IAuthenticator } from "@adaas/a-auth";
+import { A_AUTH_TYPES__IAuthenticator, A_AUTH_Context, A_AUTH_ContextClass } from "@adaas/a-auth";
 
 /**
  * Global AUTH Context for the A-Account SDKs

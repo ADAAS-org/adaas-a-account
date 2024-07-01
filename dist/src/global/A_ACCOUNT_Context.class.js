@@ -10,13 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.A_ACCOUNT_Context = exports.A_ACCOUNT_ContextClass = void 0;
-const A_AUTH_Context_class_1 = require("@adaas/a-auth/dist/src/global/A_AUTH_Context.class");
 const a_sdk_types_1 = require("@adaas/a-sdk-types");
 const errors_constants_1 = require("../constants/errors.constants");
+const a_auth_1 = require("@adaas/a-auth");
 /**
  * Global AUTH Context for the A-Account SDKs
  */
-class A_ACCOUNT_ContextClass extends A_AUTH_Context_class_1.A_AUTH_ContextClass {
+class A_ACCOUNT_ContextClass extends a_auth_1.A_AUTH_ContextClass {
     constructor() {
         super({
             namespace: 'a-account',
@@ -25,7 +25,7 @@ class A_ACCOUNT_ContextClass extends A_AUTH_Context_class_1.A_AUTH_ContextClass 
         /**
          * Global AUTH Context for the SDKs
          */
-        this.auth = A_AUTH_Context_class_1.A_AUTH_Context;
+        this.auth = a_auth_1.A_AUTH_Context;
         this.API_LOCATION = 'https://account.adaas.org';
         this.accountContextAllowedProperties = [
             ...this.authContextAllowedProperties,
