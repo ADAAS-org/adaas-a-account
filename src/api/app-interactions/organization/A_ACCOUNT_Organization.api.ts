@@ -109,7 +109,7 @@ export class A_ACCOUNT_APP_INTERACTIONS__OrganizationAPI extends A_AUTH_AppInter
     ) {
         return await this
             .post<A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUpdateResponse, M>(
-                `/organizations`,
+                `/organizations/${request.aseid}`,
                 request,
                 {
                     meta

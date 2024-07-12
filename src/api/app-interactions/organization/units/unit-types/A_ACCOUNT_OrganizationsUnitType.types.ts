@@ -95,6 +95,9 @@ export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUnitTypeUpdateRequest 
     }
 
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUnitTypeUpdateResponse = A_ACCOUNT_TYPES__OrganizationUnitType_APIEntity
+
+
+
 // =========================  ORGANIZATION UNIT TYPE DELETE REQUEST API TYPES ================================
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUnitTypeDeleteRequest = {
     /**

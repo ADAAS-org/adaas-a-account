@@ -7,8 +7,8 @@ export {
 // ============ Export Global & Service Entities ============
 
 // ================== API ==================
-export * as A_AUTH_AppInteractions from './src/api/app-interactions';
-export * as A_AUTH_ServerCommands from './src/api/server-commands';
+export * as A_ACCOUNT_AppInteractions from './src/api/app-interactions';
+export * as A_ACCOUNT_ServerCommands from './src/api/server-commands';
 // export * as A_AUTH_ServerDelegate from './src/api/server-delegate';
 
 

@@ -89,7 +89,7 @@ class A_ACCOUNT_APP_INTERACTIONS__OrganizationAPI extends a_auth_1.A_AUTH_AppInt
     meta) {
         return __awaiter(this, void 0, void 0, function* () {
             return yield this
-                .post(`/organizations`, request, {
+                .post(`/organizations/${request.aseid}`, request, {
                 meta
             });
         });
