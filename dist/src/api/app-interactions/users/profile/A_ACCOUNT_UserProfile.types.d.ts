@@ -3,6 +3,7 @@ export type A_ACCOUNT_TYPES__UserProfile_APIEntity = {
     id: number;
     avatarURL: String;
     name: string;
+    title: string;
     work_email: string;
     personal_email: string;
     avatar_a_folder_aseid?: string;

@@ -1,4 +1,4 @@
-import { A_SDK_TYPES__IDefaultPagination, A_SDK_TYPES__IRequestFilter, A_SDK_TYPES__IRequestPagination } from "@adaas/a-sdk-types";
+import { A_SDK_TYPES__IDefaultPagination, A_SDK_TYPES__IRequestFilter, A_SDK_TYPES__IRequestPagination, A_SDK_TYPES__Required } from "@adaas/a-sdk-types";
 import { A_ACCOUNT_TYPES__User_APIEntity } from "../../app-interactions/users/A_ACCOUNT_User.types";
 export type A_ACCOUNT_SERVER_COMMANDS_TYPES__UserListRequest = {
     pagination: A_SDK_TYPES__IRequestPagination;
@@ -10,20 +10,14 @@ export type A_ACCOUNT_SERVER_COMMANDS_TYPES__UserListRequest = {
     };
 };
 export type A_ACCOUNT_SERVER_COMMANDS_TYPES__UserListResponse = A_SDK_TYPES__IDefaultPagination<A_ACCOUNT_TYPES__User_APIEntity>;
-export type A_ACCOUNT_SERVER_COMMANDS_TYPES__UserCreateRequest = {
-    /**
-     * Organization identifier in ADAAS System
-     */
-    orgASEID: string;
-    /**
-     * Unit identifier in ADAAS System
-     */
-    unitASEID: string;
-    /**
-     * User email
-     */
-    email: string;
-};
+export type A_ACCOUNT_SERVER_COMMANDS_TYPES__UserCreateRequest = A_SDK_TYPES__Required<Partial<A_ACCOUNT_TYPES__User_APIEntity>, [
+    'Profile.name',
+    'Profile.title',
+    'Profile.work_email',
+    'Settings.timezone',
+    'Settings.country',
+    'Settings.locale'
+]>;
 export type A_ACCOUNT_SERVER_COMMANDS_TYPES__UserCreateResponse = A_ACCOUNT_TYPES__User_APIEntity;
 export type A_ACCOUNT_SERVER_COMMANDS_TYPES__UserGetRequest = {
     /**

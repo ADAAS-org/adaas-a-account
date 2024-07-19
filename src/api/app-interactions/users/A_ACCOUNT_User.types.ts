@@ -3,11 +3,10 @@ import { A_ACCOUNT_TYPES__UserProfile_APIEntity } from "./profile/A_ACCOUNT_User
 import { A_ACCOUNT_TYPES__UserSettings_APIEntity } from "./settings/A_ACCOUNT_UserSettings.types";
 
 export type A_ACCOUNT_TYPES__User_APIEntity = {
-    id: string,
     aseid: string,
 
-    profile: A_ACCOUNT_TYPES__UserProfile_APIEntity
-    settings: A_ACCOUNT_TYPES__UserSettings_APIEntity,
+    Profile: A_ACCOUNT_TYPES__UserProfile_APIEntity
+    Settings: A_ACCOUNT_TYPES__UserSettings_APIEntity,
 
     created_at: string;
     updated_at: string;

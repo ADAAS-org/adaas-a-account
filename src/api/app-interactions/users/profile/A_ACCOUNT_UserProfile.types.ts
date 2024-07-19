@@ -6,6 +6,7 @@ export type A_ACCOUNT_TYPES__UserProfile_APIEntity = {
     avatarURL: String
 
     name: string;
+    title: string;
     work_email: string;
 
     personal_email: string;
