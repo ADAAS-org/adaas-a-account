@@ -1,4 +1,4 @@
-import { A_SDK_TYPES__IDefaultPagination, A_SDK_TYPES__IRequestFilter, A_SDK_TYPES__IRequestPagination, A_SDK_TYPES__Required } from "@adaas/a-sdk-types"
+import { A_SDK_TYPES__DeepPartial, A_SDK_TYPES__IDefaultPagination, A_SDK_TYPES__IRequestFilter, A_SDK_TYPES__IRequestPagination, A_SDK_TYPES__Required } from "@adaas/a-sdk-types"
 import { A_ACCOUNT_TYPES__User_APIEntity } from "../../app-interactions/users/A_ACCOUNT_User.types"
 
 
@@ -18,7 +18,7 @@ export type A_ACCOUNT_SERVER_COMMANDS_TYPES__UserListResponse = A_SDK_TYPES__IDe
 
 // =========================  USER CREATE REQUEST API TYPES ================================
 export type A_ACCOUNT_SERVER_COMMANDS_TYPES__UserCreateRequest = A_SDK_TYPES__Required<
-    Partial<A_ACCOUNT_TYPES__User_APIEntity>,
+    A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__User_APIEntity>,
     [
         'Profile.name',
         'Profile.title',
