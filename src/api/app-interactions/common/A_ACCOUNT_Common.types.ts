@@ -2,7 +2,7 @@ import { A_SDK_TYPES__IDefaultPagination, A_SDK_TYPES__IRequestFilter, A_SDK_TYP
 
 export type A_ACCOUNT_TYPES__Country_APIEntity = {
     id: number,
-    aseid: '',
+    aseid: string,
     name: string;
     iso2: string;
     iso3: string;
@@ -16,7 +16,7 @@ export type A_ACCOUNT_TYPES__Country_APIEntity = {
 
 export type A_ACCOUNT_TYPES__Timezone_APIEntity = {
     id: number,
-    aseid: '',
+    aseid: string,
     name: string;
     code: string;
     utc_offset: number;
@@ -28,7 +28,7 @@ export type A_ACCOUNT_TYPES__Timezone_APIEntity = {
 
 export type A_ACCOUNT_TYPES__BusinessDomain_APIEntity = {
     id: number,
-    aseid: '',
+    aseid: string,
     name: string;
     description: string;
     icon?: string;
@@ -40,7 +40,7 @@ export type A_ACCOUNT_TYPES__BusinessDomain_APIEntity = {
 
 export type A_ACCOUNT_TYPES__BusinessType_APIEntity = {
     id: number,
-    aseid: '',
+    aseid: string,
     name: string;
     description: string;
 

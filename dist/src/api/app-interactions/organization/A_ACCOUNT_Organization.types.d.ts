@@ -37,10 +37,9 @@ export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationGetRequest = {
 };
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationGetResponse = A_SDK_TYPES__IDefaultPagination<A_ACCOUNT_TYPES__Organization_APIEntity>;
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateRequest = A_SDK_TYPES__ExtractProperties<A_ACCOUNT_TYPES__Organization_APIEntity, [
-    'settings.timezone',
-    'settings.country',
-    'profile.name',
-    'profile.website'
+    'Profile.name',
+    'Profile.website',
+    'Profile.contact_email'
 ]>;
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateResponse = A_ACCOUNT_TYPES__Organization_APIEntity;
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUpdateRequest = A_SDK_TYPES__Required<A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__Organization_APIEntity>, [

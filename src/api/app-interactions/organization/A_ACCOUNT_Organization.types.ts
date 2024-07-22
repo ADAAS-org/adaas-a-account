@@ -62,10 +62,9 @@ export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationGetResponse = A_SDK_TY
 
 // =========================  ORGANIZATION CREATE REQUEST API TYPES ================================
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateRequest = A_SDK_TYPES__ExtractProperties<A_ACCOUNT_TYPES__Organization_APIEntity, [
-    'settings.timezone',
-    'settings.country',
-    'profile.name',
-    'profile.website',
+    'Profile.name',
+    'Profile.website',
+    'Profile.contact_email'
 ]>
 
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateResponse = A_ACCOUNT_TYPES__Organization_APIEntity
