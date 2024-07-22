@@ -76,6 +76,9 @@ export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateRequest = A_SDK_
 ]>>
 
 
+
+// TMP Comment
+
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateResponse = A_ACCOUNT_TYPES__Organization_APIEntity
 
 
