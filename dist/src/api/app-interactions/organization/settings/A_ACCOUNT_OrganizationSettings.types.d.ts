@@ -3,8 +3,8 @@ import { A_ACCOUNT_TYPES__Country_APIEntity, A_ACCOUNT_TYPES__Timezone_APIEntity
 export type A_ACCOUNT_TYPES__OrganizationSettings_APIEntity = {
     id: number;
     system_background: string;
-    country: A_ACCOUNT_TYPES__Country_APIEntity;
-    timezone: A_ACCOUNT_TYPES__Timezone_APIEntity;
+    Country: A_ACCOUNT_TYPES__Country_APIEntity;
+    Timezone: A_ACCOUNT_TYPES__Timezone_APIEntity;
 };
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationSettingsGetRequest = {
     /**

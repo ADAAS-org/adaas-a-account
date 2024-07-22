@@ -31,16 +31,17 @@ export type A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationGetResponse = A_SDK_TYP
 
 // =========================  ORGANIZATION CREATE REQUEST API TYPES ================================
 export type A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationCreateRequest = A_SDK_TYPES__ExtractProperties<A_ACCOUNT_TYPES__Organization_APIEntity, [
-    'adaas_sso_role_identity',
-    'settings.timezone',
-    'settings.country',
-    'profile.name',
-    'profile.website',
-    'user',
-    'user.id'
+    'a_sso_role_aseid',
+    'Settings.Timezone',
+    'Settings.Country',
+    'Profile.name',
+    'Profile.website',
+    'Owner',
+    'Owner.id'
 ]> & {
     default?: boolean
 }
+
 
 export type A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationCreateResponse = A_ACCOUNT_TYPES__Organization_APIEntity
 

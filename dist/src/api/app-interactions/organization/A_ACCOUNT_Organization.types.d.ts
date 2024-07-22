@@ -6,22 +6,21 @@ import { A_ACCOUNT_TYPES__OrganizationProfile_APIEntity } from "./profile/A_ACCO
 import { A_ACCOUNT_TYPES__OrganizationSettings_APIEntity } from "./settings/A_ACCOUNT_OrganizationSettings.types";
 import { A_SDK_TYPES__DeepPartial, A_SDK_TYPES__ExtractProperties, A_SDK_TYPES__Required } from "@adaas/a-sdk-types/dist/src/types/common.types";
 export type A_ACCOUNT_TYPES__Organization_APIEntity = {
-    id: number;
     aseid: string;
-    profile: A_ACCOUNT_TYPES__OrganizationProfile_APIEntity;
-    settings: A_ACCOUNT_TYPES__OrganizationSettings_APIEntity;
-    businessType: A_ACCOUNT_TYPES__BusinessType_APIEntity;
-    businessDomains: Array<{
+    Profile: A_ACCOUNT_TYPES__OrganizationProfile_APIEntity;
+    Settings: A_ACCOUNT_TYPES__OrganizationSettings_APIEntity;
+    BusinessType: A_ACCOUNT_TYPES__BusinessType_APIEntity;
+    BusinessDomains: Array<{
         domain_id: number;
-        domain?: A_ACCOUNT_TYPES__BusinessDomain_APIEntity;
+        Domain?: A_ACCOUNT_TYPES__BusinessDomain_APIEntity;
     }>;
-    balance: A_ACCOUNT_TYPES__OrganizationBalance_APIEntity;
+    Balance: A_ACCOUNT_TYPES__OrganizationBalance_APIEntity;
     /**
     * User who created this organization
     */
-    owner: A_ACCOUNT_TYPES__User_APIEntity;
-    adaas_sso_role_aseid: string;
-    adaas_arc_scope_aseid: string;
+    Owner: A_ACCOUNT_TYPES__User_APIEntity;
+    a_sso_role_aseid: string;
+    a_arc_scope_aseid: string;
     created_at: string;
     updated_at: string;
 };
