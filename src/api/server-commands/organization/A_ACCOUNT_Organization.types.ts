@@ -37,7 +37,7 @@ export type A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationCreateRequest = A_SDK_T
     'Profile.name',
     'Profile.website',
     'Owner',
-    'Owner.id'
+    'Owner.aseid'
 ]> & {
     default?: boolean
 }
