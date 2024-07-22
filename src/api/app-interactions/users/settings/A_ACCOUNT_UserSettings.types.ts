@@ -5,8 +5,8 @@ export type A_ACCOUNT_TYPES__UserSettings_APIEntity = {
     id: number
     system_background: string
     locale: string
-    country: A_ACCOUNT_TYPES__Country_APIEntity
-    timezone: A_ACCOUNT_TYPES__Timezone_APIEntity
+    Country: A_ACCOUNT_TYPES__Country_APIEntity
+    Timezone: A_ACCOUNT_TYPES__Timezone_APIEntity
 }
 
 

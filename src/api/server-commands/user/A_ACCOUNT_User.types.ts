@@ -23,8 +23,8 @@ export type A_ACCOUNT_SERVER_COMMANDS_TYPES__UserCreateRequest = A_SDK_TYPES__Re
         'Profile.name',
         'Profile.title',
         'Profile.work_email',
-        'Settings.timezone',
-        'Settings.country',
+        'Settings.Timezone',
+        'Settings.Country',
         'Settings.locale'
     ]
 >
