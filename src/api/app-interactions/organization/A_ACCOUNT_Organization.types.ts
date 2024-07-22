@@ -65,7 +65,16 @@ export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateRequest = A_SDK_
     'Profile.name',
     'Profile.website',
     'Profile.contact_email'
-]>
+]> & A_SDK_TYPES__DeepPartial<A_SDK_TYPES__ExtractProperties<A_ACCOUNT_TYPES__Organization_APIEntity, [
+    'Profile.address',
+    'Profile.postal_code',
+    'Profile.linkedin_profile_url',
+    'Settings.Timezone',
+    'Settings.Country',
+    'BusinessType',
+    'BusinessDomains',
+]>>
+
 
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateResponse = A_ACCOUNT_TYPES__Organization_APIEntity
 
