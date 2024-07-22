@@ -36,8 +36,9 @@ export type A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationCreateRequest = A_SDK_T
     'Settings.Country',
     'Profile.name',
     'Profile.website',
-    'Owner',
-    'Owner.aseid'
+    'Owner.aseid',
+    'BusinessType',
+    'BusinessDomains'
 ]> & {
     default?: boolean
 }
