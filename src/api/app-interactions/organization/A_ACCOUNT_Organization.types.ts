@@ -65,7 +65,6 @@ export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationGetResponse = A_SDK_TY
         'a_arc_scope_aseid',
         'Profile',
         'Settings',
-        'BusinessType',
         'created_at',
         'updated_at',
     ]>
