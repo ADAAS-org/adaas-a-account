@@ -7,18 +7,18 @@ import { A_ACCOUNT_TYPES__OrganizationSettings_APIEntity } from "./settings/A_AC
 import { A_SDK_TYPES__DeepPartial, A_SDK_TYPES__ExtractProperties, A_SDK_TYPES__Required } from "@adaas/a-sdk-types/dist/src/types/common.types";
 export type A_ACCOUNT_TYPES__Organization_APIEntity = {
     aseid: string;
-    Profile?: A_ACCOUNT_TYPES__OrganizationProfile_APIEntity;
-    Settings?: A_ACCOUNT_TYPES__OrganizationSettings_APIEntity;
-    BusinessType?: A_ACCOUNT_TYPES__BusinessType_APIEntity;
+    Profile: A_ACCOUNT_TYPES__OrganizationProfile_APIEntity;
+    Settings: A_ACCOUNT_TYPES__OrganizationSettings_APIEntity;
+    BusinessType: A_ACCOUNT_TYPES__BusinessType_APIEntity;
     BusinessDomains: Array<{
         domain_id: number;
         Domain?: A_ACCOUNT_TYPES__BusinessDomain_APIEntity;
     }>;
-    Balance?: A_ACCOUNT_TYPES__OrganizationBalance_APIEntity;
+    Balance: A_ACCOUNT_TYPES__OrganizationBalance_APIEntity;
     /**
     * User who created this organization
     */
-    Owner?: A_ACCOUNT_TYPES__User_APIEntity;
+    Owner: A_ACCOUNT_TYPES__User_APIEntity;
     a_sso_role_aseid: string;
     a_arc_scope_aseid: string;
     created_at: string;
@@ -35,7 +35,16 @@ export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationGetRequest = {
      */
     orgASEID: string;
 };
-export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationGetResponse = A_SDK_TYPES__IDefaultPagination<A_ACCOUNT_TYPES__Organization_APIEntity>;
+export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationGetResponse = A_SDK_TYPES__Required<A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__Organization_APIEntity>, [
+    'aseid',
+    'a_sso_role_aseid',
+    'a_arc_scope_aseid',
+    'Profile',
+    'Settings',
+    'BusinessType',
+    'created_at',
+    'updated_at'
+]>;
 export type A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateRequest = A_SDK_TYPES__ExtractProperties<A_ACCOUNT_TYPES__Organization_APIEntity, [
     'Profile.name',
     'Profile.website',
