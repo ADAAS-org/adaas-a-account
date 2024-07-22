@@ -7,7 +7,7 @@ export type A_ACCOUNT_TYPES__OrganizationProfile_APIEntity = {
     contact_email: string;
     linkedin_profile_url: string;
     website: string;
-    logo_a_folder_aseid: string;
+    a_folder_logo_aseid: string;
     created_at: string;
     updated_at: string;
 };
