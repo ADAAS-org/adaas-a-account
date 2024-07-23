@@ -1,6 +1,6 @@
 import { A_AUTH_ServerCommands_APIProvider } from "@adaas/a-auth";
 import { A_ACCOUNT_ContextClass } from "../../../global/A_ACCOUNT_Context.class";
-import { A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationCreateRequest, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationGetRequest, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationGetResponse, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationListRequest, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationListResponse, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationUpdateRequest, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationUpdateResponse } from "./A_ACCOUNT_Organization.types";
+import { A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationCreateRequest, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationCreateResponse, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationGetRequest, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationGetResponse, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationListRequest, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationListResponse, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationUpdateRequest, A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationUpdateResponse } from "./A_ACCOUNT_Organization.types";
 export declare class A_ACCOUNT_SERVER_COMMANDS__OrganizationAPI extends A_AUTH_ServerCommands_APIProvider<A_ACCOUNT_ContextClass> {
     protected baseURL: string;
     /**
@@ -38,7 +38,7 @@ export declare class A_ACCOUNT_SERVER_COMMANDS__OrganizationAPI extends A_AUTH_S
     /**
      * The meta object to pass through API call for error handling or response handling
      */
-    meta?: M): Promise<import("../../app-interactions/index.types").A_ACCOUNT_TYPES__Organization_APIEntity>;
+    meta?: M): Promise<A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationCreateResponse>;
     update<M = any>(request: A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationUpdateRequest, 
     /**
      * The meta object to pass through API call for error handling or response handling

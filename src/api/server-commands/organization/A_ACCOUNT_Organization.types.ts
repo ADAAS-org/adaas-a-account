@@ -44,7 +44,16 @@ export type A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationCreateRequest = A_SDK_T
 }
 
 
-export type A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationCreateResponse = A_ACCOUNT_TYPES__Organization_APIEntity
+export type A_ACCOUNT_SERVER_COMMANDS_TYPES__OrganizationCreateResponse = A_SDK_TYPES__Required<
+    A_SDK_TYPES__DeepPartial<A_ACCOUNT_TYPES__Organization_APIEntity>, [
+        'aseid',
+        'a_sso_role_aseid',
+        'a_arc_scope_aseid',
+        'Profile',
+        'Settings',
+        'created_at',
+        'updated_at',
+    ]>
 
 
 
