@@ -1,6 +1,6 @@
 import { A_AUTH_AppInteractions_APIProvider } from "@adaas/a-auth";
 import { A_ACCOUNT_ContextClass } from "../../../global/A_ACCOUNT_Context.class";
-import { A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationGetRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationGetResponse, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationListRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationListResponse, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUpdateRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUpdateResponse } from "./A_ACCOUNT_Organization.types";
+import { A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateResponse, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationGetRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationGetResponse, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationListRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationListResponse, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUpdateRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUpdateResponse } from "./A_ACCOUNT_Organization.types";
 /**
  * API Provider for Organizations
  */
@@ -41,7 +41,7 @@ export declare class A_ACCOUNT_APP_INTERACTIONS__OrganizationAPI extends A_AUTH_
     /**
      * The meta object to pass through API call for error handling or response handling
      */
-    meta?: M): Promise<import("./A_ACCOUNT_Organization.types").A_ACCOUNT_TYPES__Organization_APIEntity>;
+    meta?: M): Promise<A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateResponse>;
     /**
     * This function is used to create organization
     *
