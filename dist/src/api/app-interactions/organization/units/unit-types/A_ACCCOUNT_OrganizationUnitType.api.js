@@ -12,9 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.A_ACCOUNT_APP_INTERACTIONS__OrganizationUnitTypeAPI = void 0;
 const a_auth_1 = require("@adaas/a-auth");
 class A_ACCOUNT_APP_INTERACTIONS__OrganizationUnitTypeAPI extends a_auth_1.A_AUTH_AppInteractions_APIProvider {
-    constructor() {
-        super(...arguments);
-        this.baseURL = this.context.getConfigurationProperty('API_LOCATION');
+    get baseURL() {
+        return this.context.getConfigurationProperty('API_LOCATION');
     }
     /**
      * Returns list of organization unit types with applied filters and pagination

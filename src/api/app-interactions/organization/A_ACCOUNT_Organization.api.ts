@@ -17,7 +17,9 @@ import {
  */
 export class A_ACCOUNT_APP_INTERACTIONS__OrganizationAPI extends A_AUTH_AppInteractions_APIProvider<A_ACCOUNT_ContextClass> {
 
-    protected baseURL: string = this.context.getConfigurationProperty<string>('API_LOCATION');
+    protected get baseURL(): string {
+        return this.context.getConfigurationProperty('API_LOCATION');
+    }
 
 
     /**

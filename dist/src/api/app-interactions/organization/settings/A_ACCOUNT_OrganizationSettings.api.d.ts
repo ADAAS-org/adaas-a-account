@@ -2,7 +2,7 @@ import { A_AUTH_AppInteractions_APIProvider } from "@adaas/a-auth";
 import { A_ACCOUNT_ContextClass } from "../../../../global/A_ACCOUNT_Context.class";
 import { A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationSettingsGetRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationSettingsUpdateRequest } from "./A_ACCOUNT_OrganizationSettings.types";
 export declare class A_ACCOUNT_APP_INTERACTIONS__OrganizationSettingsAPI extends A_AUTH_AppInteractions_APIProvider<A_ACCOUNT_ContextClass> {
-    protected baseURL: string;
+    protected get baseURL(): string;
     /**
      *
      * This function is used to get organization settings

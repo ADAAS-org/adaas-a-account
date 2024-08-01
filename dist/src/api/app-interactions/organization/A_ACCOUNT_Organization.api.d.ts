@@ -5,7 +5,7 @@ import { A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationCreateRequest, A_ACCOUNT_
  * API Provider for Organizations
  */
 export declare class A_ACCOUNT_APP_INTERACTIONS__OrganizationAPI extends A_AUTH_AppInteractions_APIProvider<A_ACCOUNT_ContextClass> {
-    protected baseURL: string;
+    protected get baseURL(): string;
     /**
      * Returns list of organizations based on User Access
      *

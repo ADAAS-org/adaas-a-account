@@ -12,6 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.A_ACCOUNT_APP_INTERACTIONS__UserAPI = void 0;
 const a_auth_1 = require("@adaas/a-auth");
 class A_ACCOUNT_APP_INTERACTIONS__UserAPI extends a_auth_1.A_AUTH_AppInteractions_APIProvider {
+    get baseURL() {
+        return this.context.getConfigurationProperty('API_LOCATION');
+    }
     list(request, 
     /**
      * The meta object to pass through API call for error handling or response handling

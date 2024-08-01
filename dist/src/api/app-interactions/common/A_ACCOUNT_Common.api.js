@@ -16,9 +16,8 @@ const a_auth_1 = require("@adaas/a-auth");
  * such as Countries, Timezones, Business Domains, Business Types
  */
 class A_ACCOUNT_APP_INTERACTIONS__CommonAPI extends a_auth_1.A_AUTH_AppInteractions_APIProvider {
-    constructor() {
-        super(...arguments);
-        this.baseURL = this.context.getConfigurationProperty('API_LOCATION');
+    get baseURL() {
+        return this.context.getConfigurationProperty('API_LOCATION');
     }
     /**
      * Returns list of countries with applied filters and pagination

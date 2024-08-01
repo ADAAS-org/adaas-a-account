@@ -2,7 +2,7 @@ import { A_AUTH_AppInteractions_APIProvider } from "@adaas/a-auth";
 import { A_ACCOUNT_ContextClass } from "../../../../global/A_ACCOUNT_Context.class";
 import { A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUnitCreateRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUnitDeleteRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUnitDeleteResponse, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUnitGetRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUnitListRequest, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUnitListResponse, A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationUnitUpdateRequest } from "./A_ACCOUNT_OrganizationUnit.types";
 export declare class A_ACCOUNT_APP_INTERACTIONS__OrganizationUnitAPI extends A_AUTH_AppInteractions_APIProvider<A_ACCOUNT_ContextClass> {
-    protected baseURL: string;
+    protected get baseURL(): string;
     /**
      * Returns list of organization units based on User Access
      *

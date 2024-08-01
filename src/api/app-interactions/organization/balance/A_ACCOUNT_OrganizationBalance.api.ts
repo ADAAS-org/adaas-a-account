@@ -8,7 +8,9 @@ import { A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationBalanceGetRequest } from 
  */
 export class A_ACCOUNT_APP_INTERACTIONS__OrganizationBalanceAPI extends A_AUTH_AppInteractions_APIProvider<A_ACCOUNT_ContextClass> {
 
-    protected baseURL = this.context.getConfigurationProperty('API_LOCATION');
+    protected get baseURL(): string {
+        return this.context.getConfigurationProperty('API_LOCATION');
+    }
 
     async load<M = any>(
         request: A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationBalanceGetRequest,

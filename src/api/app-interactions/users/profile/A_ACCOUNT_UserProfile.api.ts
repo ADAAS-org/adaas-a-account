@@ -5,7 +5,9 @@ import { A_ACCOUNT_APP_INTERACTIONS_TYPES__UserProfileAvatarUploadRequest, A_ACC
 
 export class A_ACCOUNT_APP_INTERACTIONS__UserProfileAPI extends A_AUTH_AppInteractions_APIProvider<A_ACCOUNT_ContextClass> {
 
-    protected baseURL: string = this.context.getConfigurationProperty<string>('API_LOCATION');
+    protected get baseURL(): string {
+        return this.context.getConfigurationProperty('API_LOCATION');
+    }
 
 
     async load<M = any>(

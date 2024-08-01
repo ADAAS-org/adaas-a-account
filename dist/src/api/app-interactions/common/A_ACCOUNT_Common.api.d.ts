@@ -6,7 +6,7 @@ import { A_ACCOUNT_APP_INTERACTIONS_TYPES__BusinessDomainsListRequest, A_ACCOUNT
  * such as Countries, Timezones, Business Domains, Business Types
  */
 export declare class A_ACCOUNT_APP_INTERACTIONS__CommonAPI extends A_AUTH_AppInteractions_APIProvider<A_ACCOUNT_ContextClass> {
-    protected baseURL: string;
+    protected get baseURL(): string;
     /**
      * Returns list of countries with applied filters and pagination
      *

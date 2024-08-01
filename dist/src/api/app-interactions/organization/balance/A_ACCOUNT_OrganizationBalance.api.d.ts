@@ -5,7 +5,7 @@ import { A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationBalanceGetRequest } from 
  * API Provider for Organization Balance
  */
 export declare class A_ACCOUNT_APP_INTERACTIONS__OrganizationBalanceAPI extends A_AUTH_AppInteractions_APIProvider<A_ACCOUNT_ContextClass> {
-    protected baseURL: any;
+    protected get baseURL(): string;
     load<M = any>(request: A_ACCOUNT_APP_INTERACTIONS_TYPES__OrganizationBalanceGetRequest, 
     /**
      * The meta object to pass through API

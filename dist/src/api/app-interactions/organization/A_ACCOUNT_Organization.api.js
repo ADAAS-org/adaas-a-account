@@ -15,9 +15,8 @@ const a_auth_1 = require("@adaas/a-auth");
  * API Provider for Organizations
  */
 class A_ACCOUNT_APP_INTERACTIONS__OrganizationAPI extends a_auth_1.A_AUTH_AppInteractions_APIProvider {
-    constructor() {
-        super(...arguments);
-        this.baseURL = this.context.getConfigurationProperty('API_LOCATION');
+    get baseURL() {
+        return this.context.getConfigurationProperty('API_LOCATION');
     }
     /**
      * Returns list of organizations based on User Access

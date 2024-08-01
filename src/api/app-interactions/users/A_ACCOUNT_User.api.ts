@@ -12,6 +12,10 @@ import {
 
 export class A_ACCOUNT_APP_INTERACTIONS__UserAPI extends A_AUTH_AppInteractions_APIProvider<A_ACCOUNT_ContextClass> {
 
+    protected get baseURL(): string {
+        return this.context.getConfigurationProperty('API_LOCATION');
+    }
+
 
     async list<M = any>(
         request: A_ACCOUNT_APP_INTERACTIONS_TYPES__UserListRequest,
